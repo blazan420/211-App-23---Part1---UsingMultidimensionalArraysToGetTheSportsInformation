@@ -58,7 +58,7 @@ public class Game {
         //Sum Scores for the game
         for (int score : scores) {
             total += score;
-            total = total + score;
+            //total = total + score;
         }
         return (double) total / scores.length;
     }

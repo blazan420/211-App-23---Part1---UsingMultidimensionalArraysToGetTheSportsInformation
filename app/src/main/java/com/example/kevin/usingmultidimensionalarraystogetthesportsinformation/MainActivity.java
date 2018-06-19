@@ -38,6 +38,18 @@ public class MainActivity extends AppCompatActivity {
         txtGameLowestScore.setText(myGame.getMinimumScore() + "");
 
 
+        String oldTxtGameAverageValueOfSCores;
+
+        for (int gameIndex = 0; gameIndex < gameScoresArray.length; gameIndex++) {
+            oldTxtGameAverageValueOfSCores = txtGameAverageValueOfScores.getText().toString() +
+                    gameIndex + "- ";
+
+            double averageValue = myGame.getTheAverageValueOfScore(gameScoresArray[gameIndex]);
+            txtGameAverageValueOfScores.setText(oldTxtGameAverageValueOfSCores +
+            averageValue + "\n");
+        }
+
+
 
 
 

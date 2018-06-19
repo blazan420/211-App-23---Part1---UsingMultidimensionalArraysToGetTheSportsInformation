@@ -1,5 +1,7 @@
 package com.example.kevin.usingmultidimensionalarraystogetthesportsinformation;
 
+import android.widget.TextView;
+
 public class Game {
 
     private String gameName;
@@ -59,6 +61,22 @@ public class Game {
             total = total + score;
         }
         return (double) total / scores.length;
+    }
+
+    public void letsOutPutTheScoresToTheScreen(TextView textView) {
+
+        String oldTextViewValue;
+
+        for (int gameIndex = 0; gameIndex < scores.length; gameIndex++) {
+
+            for (int gameScore : scores[gameIndex]) {
+
+                oldTextViewValue = textView.getText().toString();
+
+                textView.setText(String.format(oldTextViewValue + "Game Number %2d: %3d\n\n\n", (gameIndex + 1), gameScore));
+
+            }
+        }
     }
 
 }
